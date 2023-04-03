@@ -1,0 +1,230 @@
+/* CSS reset */
+/* 載入字型 */
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700&display=swap&subset=chinese-traditional");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f6f7f8;
+  font-family: "Noto Sans TC", sans-serif;
+  /* 設定字型 */
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  line-height: 0.9;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+li {
+  list-style-type: none;
+  /* 拿掉前方圈圈 */
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  /* 拿掉底線 */
+}
+
+/*main*/
+nav {
+  background-color: #D0D0D0;
+  height: 60px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 30px;
+  color: black;
+}
+
+.logout-button {
+  height: 30px;
+  border: 2px solid black;
+  color: orange;
+  background-color: white;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+/*共用樣式*/
+.container {
+  width: 70%;
+  margin: 0 auto;
+  padding: 50px 0;
+  display: grid;
+  grid-gap: 30px;
+  justify-content: center;
+}
+
+/*index*/
+.select-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 0;
+}
+
+.total {
+  height: 70px;
+  max-width: 400px;
+  position: relative;
+}
+
+.totalAmount {
+  height: 100%;
+  color: orangered;
+  font-size: 60px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.list-wrapper {
+  display: grid;
+  grid-template-columns: 400px 100px 100px;
+  grid-template-rows: 50px;
+  grid-gap: 50px;
+}
+
+.grid-item {
+  width: 100%;
+  display: flex;
+  background-color: #E0E0E0;
+  align-items: center;
+  position: relative;
+}
+
+.icon {
+  height: 30px;
+  font-size: 30px;
+  color: #00CACA;
+  position: absolute;
+  left: 20px;
+}
+
+.activity {
+  position: absolute;
+  left: 55px;
+}
+
+.price {
+  position: absolute;
+  right: 20px;
+}
+
+.function-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.delete {
+  margin: 0 0 0 20px;
+}
+
+.new-item {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.new {
+  background-color: #FF5809;
+  color: white;
+  border: 1px solid black;
+  text-align: center;
+  width: 180px;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+/*new*/
+.necessary,
+.input-items {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+}
+
+.title-necessary {
+  font-size: 12px;
+}
+
+.content-necessary {
+  font-size: 20px;
+}
+
+.input-items {
+  width: 400px;
+  height: 40px;
+  padding: 0 0 0 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-item {
+  width: 200px;
+  height: 90%;
+  position: absolute;
+  right: 60px;
+  border: 1px solid black;
+}
+
+.new-button-box {
+  width: 400px;
+  position: relative;
+}
+
+.new-button {
+  width: 200px;
+  height: 40px;
+  position: absolute;
+  right: 60px;
+  background-color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-weight: bold;
+}
