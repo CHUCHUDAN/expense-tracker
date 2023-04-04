@@ -11,7 +11,7 @@ router.get('/login', (req, res) => {
 //login功能
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
-  failureRedirect: '/users/login'
+  failureRedirect: '/users/login',
 }))
 
 //logout功能
