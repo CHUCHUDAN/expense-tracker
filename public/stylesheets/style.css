@@ -230,7 +230,8 @@ nav {
 }
 
 /*login*/
-.login-wrapper {
+.login-wrapper,
+.register-wrapper {
   width: 600px;
   height: 350px;
   background-color: white;
@@ -241,14 +242,19 @@ nav {
   padding: 10px;
 }
 
-.login-title {
+.login-title,
+.register-title {
   display: flex;
   justify-content: center;
   margin: 30px 0;
 }
 
 .login-email,
-.login-password {
+.login-password,
+.register-email,
+.register-password,
+.register-name,
+.register-confirmpassword {
   display: flex;
   flex-direction: column;
   height: 70px;
@@ -256,17 +262,21 @@ nav {
 }
 
 .email,
-.password {
+.password,
+.name,
+.confirmpassword{
   padding: 8px;
-  border-radius: 2px;
+  border-radius: 4px;
   border: 0.5px solid #E0E0E0;
 }
 
-.login-button-box {
+.login-button-box,
+.register-button-box {
   margin: 10px 0;
 }
 
-.login-button {
+.login-button,
+.register-button {
   width: 100%;
   background-color: #D94600;
   color: #E0E0E0;
@@ -276,9 +286,18 @@ nav {
   font-size: 15px;
   border-radius: 5px;
 }
-.login-message-box {
+
+.login-message-box,
+.register-message-box {
   margin: 20px 0;
 }
-.login-message {
-  color:#D94600;
+
+.login-message,
+.register-message {
+  color: #D94600;
+}
+
+/*register*/
+.register-wrapper {
+  height: 500px;
 }
