@@ -1,11 +1,18 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../../models/user')
+const passport = require('passport')
 
 //login頁面
 router.get('/login', (req, res) => {
   res.render('login')
 })
+
+//login功能
+router.post('/login', passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/users/login'
+}))
 
 //register頁面
 router.get('/register', (req, res) => {

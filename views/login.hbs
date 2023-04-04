@@ -1,22 +1,24 @@
-<div class="container">
-  <div class="login-wrapper">
-    <div class="login-title">
-      <h1>Login</h1>
-    </div>
-    <div class="login-email">
-      <label for="email">Email</label>
-      <input type="text" name="email" id="email" placeholder="Enter Email" class="email">
-    </div>
-    <div class="login-password">
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" placeholder="Enter Password" class="password">
-    </div>
-    <div class="login-button-box">
-      <button class="login-button">Login</button>
-    </div>
-    <div class="login-message-box">
-      <span>No Account?</span>
-      <a class="login-message" href="/users/register">Register</a>
+<form action="/users/login" method="POST">
+  <div class="container">
+    <div class="login-wrapper">
+      <div class="login-title">
+        <h1>Login</h1>
+      </div>
+      <div class="login-email">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" placeholder="Enter Email" class="email">
+      </div>
+      <div class="login-password">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Enter Password" class="password">
+      </div>
+      <div class="login-button-box">
+        <button class="login-button">Login</button>
+      </div>
+      <div class="login-message-box">
+        <span>No Account?</span>
+        <a class="login-message" href="/users/register">Register</a>
+      </div>
     </div>
   </div>
-</div>
+</form>
