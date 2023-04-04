@@ -1,30 +1,33 @@
-<div class="container">
-  <div class="register-wrapper">
-    <div class="register-title">
-      <h1>Register</h1>
-    </div>
-    <div class="register-name">
-      <label for="name">Name</label>
-      <input type="text" name="name" id="name" placeholder="Enter Name" class="name">
-    </div>
-    <div class="register-email">
-      <label for="email">Email</label>
-      <input type="text" name="email" id="email" placeholder="Enter Email" class="email">
-    </div>
-    <div class="register-password">
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" placeholder="Enter Password" class="password">
-    </div>
-    <div class="register-confirmpassword">
-      <label for="confirmpassword">Confirm Password</label>
-      <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Enter Confirm password" class="confirmpassword">
-    </div>
-    <div class="register-button-box">
-      <button class="register-button">Register</button>
-    </div>
-    <div class="register-message-box">
-      <span>Have an Account?</span>
-      <a class="register-message" href="/users/login">Login</a>
+<form action="/users/register" method="POST">
+  <div class="container">
+    <div class="register-wrapper">
+      <div class="register-title">
+        <h1>Register</h1>
+      </div>
+      <div class="register-name">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter Name" class="name" value="{{name}}">
+      </div>
+      <div class="register-email">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" placeholder="Enter Email" class="email" value="{{email}}">
+      </div>
+      <div class="register-password">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Enter Password" class="password" value="{{password}}">
+      </div>
+      <div class="register-confirmpassword">
+        <label for="confirmpassword">Confirm Password</label>
+        <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Enter Confirm password"
+          class="confirmpassword" value="{{confirmpassword}}">
+      </div>
+      <div class="register-button-box">
+        <button class="register-button">Register</button>
+      </div>
+      <div class="register-message-box">
+        <span>Have an Account?</span>
+        <a class="register-message" href="/users/login">Login</a>
+      </div>
     </div>
   </div>
-</div>
+</form>
