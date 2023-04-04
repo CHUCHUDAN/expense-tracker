@@ -6,6 +6,10 @@ router.get('/new', (req, res) => {
   res.render('new')
 })
 
+router.get('/edit', (req, res) => {
+  res.render('edit')
+})
+
 router.post('/', (req, res) => {
   const { name, date, category, price } = req.body
   console.log(req.body)

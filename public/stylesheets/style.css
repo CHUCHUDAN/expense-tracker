@@ -228,3 +228,57 @@ nav {
   border: 1px solid black;
   font-weight: bold;
 }
+
+/*login*/
+.login-wrapper {
+  width: 600px;
+  height: 350px;
+  background-color: white;
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(87, 87, 87, 1);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(87, 87, 87, 1);
+  box-shadow: 0px 1px 5px 0px rgba(87, 87, 87, 1);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.login-title {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.login-email,
+.login-password {
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  justify-content: space-around;
+}
+
+.email,
+.password {
+  padding: 8px;
+  border-radius: 2px;
+  border: 0.5px solid #E0E0E0;
+}
+
+.login-button-box {
+  margin: 10px 0;
+}
+
+.login-button {
+  width: 100%;
+  background-color: #D94600;
+  color: #E0E0E0;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 5px;
+}
+.login-message-box {
+  margin: 20px 0;
+}
+.login-message {
+  color:#D94600;
+}
