@@ -34,21 +34,16 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 UsePassport(app)
 
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.isAuthenticated()
+  res.locals.user = req.user
+  next()
+})
+
 //每筆request都會先經過routes處理
 app.use(routes)
 
 
-app.get('/', (req, res) => {
-  res.render('index')
-})
-
-app.get('/new', (req, res) => {
-  res.render('new')
-})
-
-app.get('/edit', (req, res) => {
-  res.render('edit')
-})
 
 app.listen(port, () => {
   console.log(`Express is running on http://localhost:${port}`)

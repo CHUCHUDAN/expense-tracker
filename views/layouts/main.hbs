@@ -13,9 +13,17 @@
 <body>
   <nav>
     <div class="title-wrapper">
-      <a href="/" class="title">家庭記帳本</a>
+      <a href="/" class="title">
+      {{#if isAuthenticated}} {{user.name}}的{{/if}}家庭記帳本
+      </a>
     </div>
-    <a href="" class="logout-button">登出</a>
+    {{#if isAuthenticated}}
+    <a href="/users/logout" class="logout-button">登出</a>
+    {{else}}
+    <a href="/users/login" class="logout-button">登入</a>
+    {{/if}}
+
+
   </nav>
   {{{ body }}}
 </body>
