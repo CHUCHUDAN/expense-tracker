@@ -6,12 +6,12 @@
   </form>
   <div class="total">
     總金額:
-    <div class="totalAmount">25260</div>
+    <div class="totalAmount">{{totalAmount}}</div>
   </div>
   {{#each record}}
   <div class="list-wrapper">
     <div class="grid-item">
-      <i class="fa-solid fa-utensils icon"></i>
+      <i class="{{this.icon}} icon"></i>
       <div class="activity">
         <div>{{this.name}}</div>
         <div>{{this.date}}</div>
@@ -19,8 +19,12 @@
       <div class="price">{{this.amount}}</div>
     </div>
     <div class="function-wrapper">
-      <div class="edit">修改</div>
-      <div class="delete">刪除</div>
+      <form action="/cruds/{{this._id}}/edit" method="GET">
+      <button class="edit">修改</button>
+      </form>
+      <form action="/cruds/{{this._id}}/?_method=DELETE" method="POST">
+        <button class="delete">刪除</button>
+      </form>
     </div>
   </div>
   {{/each}}

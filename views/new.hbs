@@ -14,13 +14,11 @@
     </div>
     <div class="input-items">
       <label for="category">類別* :</label>
-      <select name="category"  id="category" class="input-item">
+      <select name="categoryId" id="category" class="input-item">
         <option value="none" selected disabled hidden>Select</option>
-        <option value="1" name="家居物業">家居物業</option>
-        <option value="2" name="交通出行">交通出行</option>
-        <option value="3" name="休閒娛樂">休閒娛樂</option>
-        <option value="4" name="餐飲食品">餐飲食品</option>
-        <option value="5" name="其他">其他</option>
+        {{#each category}}
+        <option value={{this._id}} name={{this.name}}>{{this.name}}</option>
+        {{/each}}
       </select>
     </div>
     <div class="input-items">

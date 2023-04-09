@@ -21,13 +21,13 @@ const recordSchema = new Schema ({
     type: Schema.Types.ObjectId,
     ref: 'CG',
     index: true,
-    //require: true
+    require: true
   },
     userId: {
     type: Schema.Types.ObjectId,
     ref: 'User',
     index: true,
-    //require: true
+    require: true
   }
 })
 
