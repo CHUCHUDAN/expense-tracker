@@ -2,13 +2,14 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const categorySchema = new Schema({
-  id: {
-    type: Number,
-  },
   name: {
     type: String,
     required: true
   },
+  icon: {
+    type: String,
+    require: true
+  }
 })
 
 module.exports = mongoose.model('CG', categorySchema)
