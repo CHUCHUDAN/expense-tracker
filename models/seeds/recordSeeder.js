@@ -20,7 +20,7 @@ db.once('open', async () => {
       email: SEED_USER.email,
       password: hash
     })
-    const category = await CG.find({}).lean()
+    const category = await CG.find().lean()
     bookeepings.filter(book => {
       category.map(cate => {
         if (cate.icon === book.icon) {
