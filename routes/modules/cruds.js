@@ -17,8 +17,11 @@ router.get('/new', async (req, res) => {
 router.post('/new', async (req, res) => {
   try {
     const userId = req.user._id
-    const { name, date, amount, categoryId, } = req.body
-    await Record.create({ name, date, categoryId, amount, userId })
+    const { name, date, amount, categoryId } = req.body
+    let icon = ''
+    const category = await CG.find({ _id: categoryId }).lean()
+    const [cate] = category
+    await Record.create({ name, date, amount, icon: cate.icon, categoryId, userId,  })
     res.redirect('/')
   } catch (error) {
     console.error(error)
@@ -49,11 +52,14 @@ router.put('/:id', async (req, res) => {
     const userId = req.user._id
     const _id = req.params.id
     const { name, date, categoryId, amount } = req.body
+    const category = await CG.find({ _id: categoryId }).lean()
+    const [cate] = category
     const record = await Record.findOne({ _id, userId })
     record.name = name
     record.date = date
     record.categoryId = categoryId
     record.amount = amount
+    record.icon = cate.icon
     await record.save()
     res.redirect('/')
   } catch (error) {

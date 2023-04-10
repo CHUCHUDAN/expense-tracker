@@ -20,9 +20,6 @@ router.get('/', async (req, res) => {
         totalAmount += r.amount
         const newDate = r.date.toLocaleDateString()
         r.date = newDate
-        const categoryId = r.categoryId
-        const result = category.filter(c => c._id.toString() === categoryId.toString())
-        r.icon = result[0].icon
       })
     return res.render('index', { record, totalAmount, category, selectedData })
 
