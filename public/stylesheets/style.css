@@ -326,11 +326,15 @@ nav {
 .login-button-box,
 .register-button-box {
   margin: 10px 0;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .login-button,
-.register-button {
-  width: 100%;
+.register-button,
+.fb-button
+{
+  width: 40%;
   background-color: #D94600;
   color: #E0E0E0;
   border: none;
@@ -338,6 +342,11 @@ nav {
   cursor: pointer;
   font-size: 15px;
   border-radius: 5px;
+}
+.fb-button {
+  background-color: #0072E3;
+  margin-left: 5px;
+  text-align: center;
 }
 
 .login-message-box,
