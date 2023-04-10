@@ -1,0 +1,26 @@
+{{#if errors}}
+{{#each errors}}
+<div class="alert-wrapper">
+  <div class="alert-message warning-color">
+    {{this.message}}
+    <button class="close-button warning-color">X</button>
+  </div>
+</div>
+{{/each}}
+{{/if}}
+{{#if success_msg}}
+<div class="alert-wrapper">
+  <div class="alert-message success-color">
+    {{success_msg}}
+    <button class="close-button success-color">X</button>
+  </div>
+</div>
+{{/if}}
+{{#if warning_msg}}
+<div class="alert-wrapper">
+  <div class="alert-message warning-color">
+    {{warning_msg}}
+    <button class="close-button warning-color">X</button>
+  </div>
+</div>
+{{/if}}

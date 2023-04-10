@@ -158,7 +158,9 @@ nav {
   align-items: center;
   font-size: 20px;
 }
-.edit ,.delete {
+
+.edit,
+.delete {
   width: 60px;
   height: 40px;
   cursor: pointer;
@@ -243,7 +245,7 @@ nav {
 .login-wrapper,
 .register-wrapper {
   width: 600px;
-  height: 350px;
+  height: auto;
   background-color: white;
   -webkit-box-shadow: 0px 1px 5px 0px rgba(87, 87, 87, 1);
   -moz-box-shadow: 0px 1px 5px 0px rgba(87, 87, 87, 1);
@@ -257,6 +259,47 @@ nav {
   display: flex;
   justify-content: center;
   margin: 30px 0;
+}
+
+.alert-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.alert-message {
+  width: 80%;
+  height: 40px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 5px;
+  -webkit-box-shadow: 0px 1px 3px 0px #D0D0D0;
+  -moz-box-shadow: 0px 1px 3px 0px #D0D0D0;
+  box-shadow: 0px 1px 3px 0px #D0D0D0;
+  letter-spacing: 1.5px;
+  position: relative;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.close-button {
+  position: absolute;
+  right: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.success-color {
+  background-color: #04AA6D;
+  color: white;
+}
+
+
+.warning-color {
+  background-color: #FFC0C7;
+  color: black;
 }
 
 .login-email,
@@ -274,7 +317,7 @@ nav {
 .email,
 .password,
 .name,
-.confirmpassword{
+.confirmpassword {
   padding: 8px;
   border-radius: 4px;
   border: 0.5px solid #E0E0E0;
@@ -309,5 +352,5 @@ nav {
 
 /*register*/
 .register-wrapper {
-  height: 500px;
+  height: auto;
 }

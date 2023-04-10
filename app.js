@@ -19,6 +19,9 @@ const UsePassport = require('./config/passport')
 //引入methodOverride
 const methodOverride = require('method-override')
 
+//引入connect-flash
+const flash = require('connect-flash')
+
 //引入mongoose模組
 require('./config/mongoose')
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: 'hbs' }))
@@ -32,6 +35,8 @@ app.use(session({
 // 用 app.use 規定每一筆請求都需要透過 express.static 進行前置處理
 app.use(express.static('public'))
 
+app.use(flash())
+
 // 用 app.use 規定每一筆請求都需要透過 body-parser 進行前置處理
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -42,6 +47,8 @@ UsePassport(app)
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.isAuthenticated()
   res.locals.user = req.user
+  res.locals.success_msg = req.flash('success_msg')
+  res.locals.warning_msg = req.flash('warning_msg')
   next()
 })
 
