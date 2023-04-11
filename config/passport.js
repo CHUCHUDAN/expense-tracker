@@ -10,16 +10,19 @@ module.exports = app => {
   app.use(passport.session())
 
   //設定本地登入策略
-  passport.use(new LocalStrategy({ usernameField: 'email' }, async (email, password, done) => {
+  passport.use(new LocalStrategy({ usernameField: 'email', passReqToCallback: true }, async (req, email, password, done) => {
     try {
       const user = await User.findOne({ email })
       if (!user) {
+        req.flash('warning_msg', '此信箱未註冊')
         return done(null, false, { message: 'That email is not register!' })
       }
       const isMatch = await bcrypt.compare(password, user.password)
       if (!isMatch) {
+        req.flash('warning_msg', '登入失敗:信箱或密碼錯誤')
         return done(null, false, { message: 'Email or password  incorrect' })
       }
+      req.flash('success_msg', '登入成功')
       return done(null, user)
     } catch (error) {
       return done(err, false)

@@ -302,6 +302,11 @@ nav {
   color: black;
 }
 
+.alert-message-index {
+  width: 200px;
+  margin-top: 10px;
+}
+
 .login-email,
 .login-password,
 .register-email,

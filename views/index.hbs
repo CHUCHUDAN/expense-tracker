@@ -1,3 +1,4 @@
+{{> message }}
 <div class="container">
   <form id='select' action="/">
     <select name="categoryId" id="category" class="select-box" onchange="submitForm()">
@@ -44,7 +45,10 @@
 
 
 <script>
+  const alertMessage = document.querySelector('.alert-message')
   function submitForm() {
     document.querySelector('#select').submit();
   }
+  alertMessage.classList.add('alert-message-index')
 </script>
+<script src="/javascripts/messageControl.js"></script>
