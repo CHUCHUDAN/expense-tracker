@@ -47,7 +47,7 @@ Installing - 專案安裝流程
     
 2.開啟終端機(Terminal)，進入存放此專案的資料夾
 
-    cd restaurant_list_refactor
+    cd expense-tracker
     
 3.安裝 express 套件
 
