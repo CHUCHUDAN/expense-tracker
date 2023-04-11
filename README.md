@@ -45,7 +45,7 @@ Installing - 專案安裝流程
 ----
 1.打開你的 terminal，Clone 此專案至本機電腦
 
-    git clone https://github.com/CHUCHUDAN/restaurant_list_refactor.git
+    git clone https://github.com/CHUCHUDAN/expense-tracker.git
     
 2.開啟終端機(Terminal)，進入存放此專案的資料夾
 
@@ -59,9 +59,14 @@ Installing - 專案安裝流程
     
     在 Terminal 輸入 npm install nodemon 指令
     
-5.請自行新增.env檔案放置與資料庫MongoDB連線相關資料
+5.請自行新增.env檔案放置與檔案相關的敏感資訊可參考.env.example檔案內容
 
     MONGODB_URI= "您的MongoDB連線資訊"
+    FACEBOOK_ID="您的FB_ID"
+    FACEBOOK_SECRET="您的FB密鑰"
+    FACEBOOK_CALLBACK=http://localhost:3000/auth/facebook/callback
+    SESSION_SECRET=ThisIsMySecret
+    PORT=3000
     
 6.啟動伺服器
   
@@ -69,8 +74,9 @@ Installing - 專案安裝流程
     
 7.當 terminal 出現以下字樣，表示伺服器啟動成功並與資料庫連線成功
 
-    The web is Listen on http://localhost:3000
+    Express is running on http://localhost:3000
     Mongodb connected!
+
     
 8.如需使用種子資料請輸入指令
 
