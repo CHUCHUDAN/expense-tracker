@@ -1,3 +1,4 @@
+{{> message}}
 <form action="/cruds/new" method="POST">
   <div class="container">
     <div class="necessary">
@@ -6,11 +7,11 @@
     </div>
     <div class="input-items">
       <label for="name">名稱* :</label>
-      <input type="text" name="name" id="name" class="input-item">
+      <input type="text" name="name" id="name" class="input-item" maxlength="20" value="{{name}}">
     </div>
     <div class="input-items">
       <label for="date">日期* :</label>
-      <input type="date" name="date" id="date" value="2023-04-03" class="input-item">
+      <input type="date" name="date" id="date" value="{{date}}" class="input-item">
     </div>
     <div class="input-items">
       <label for="category">類別* :</label>
@@ -23,10 +24,14 @@
     </div>
     <div class="input-items">
       <label for="amount">金額* :</label>
-      <input name="amount" id="amount" class="input-item"></select>
+      <input type="number" name="amount" id="amount" class="input-item" value="{{amount}}"></select>
     </div>
     <div class="new-button-box">
       <button type="submit" class="new-button">新增支出</button>
     </div>
   </div>
 </form>
+<script>
+  const alertMessage = document.querySelector('.alert-message')
+  alertMessage.classList.add('alert-message-index')
+</script>
