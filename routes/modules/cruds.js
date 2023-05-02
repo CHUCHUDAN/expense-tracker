@@ -16,14 +16,14 @@ router.get('/new', async (req, res) => {
 //新增帳務功能
 router.post('/new', async (req, res) => {
   try {
+    const errors = []
     const userId = req.user._id
     const { name, date, amount, categoryId } = req.body
     const c = await CG.find().lean()
     if (!name || !date || !amount || !categoryId) {
-      req.flash('warning_msg', '所有欄位都是必填')
-      return res.render('new', { name, date, amount, categoryId, category: c })
+      errors.push({ message: '所有欄位都是必填' })
+      return res.render('new', { name, date, amount, categoryId, category: c , errors})
     }
-    let icon = ''
     const category = await CG.find({ _id: categoryId }).lean()
     const [cate] = category
     await Record.create({ name, date, amount, icon: cate.icon, categoryId, userId, })
@@ -54,6 +54,7 @@ router.get('/:id/edit', async (req, res) => {
 //編輯功能
 router.put('/:id', async (req, res) => {
   try {
+    const errors = []
     const userId = req.user._id
     const _id = req.params.id
     const rec = req.body
@@ -63,8 +64,8 @@ router.put('/:id', async (req, res) => {
     const selectedData = category.filter(cate => cate._id.toString() === categoryId)
     const remindData = category.filter(cate => cate._id.toString() !== categoryId)
     if (!name || !date || !amount || !categoryId) {
-      req.flash('warning_msg', '所有欄位都是必填')
-      return res.render('edit', { selectedData, remindData, record: rec })
+      errors.push({ message: '所有欄位都是必填' })
+      return res.render('edit', { selectedData, remindData, record: rec, errors})
     }else {
       const category = await CG.find({ _id: categoryId }).lean()
       const [cate] = category
