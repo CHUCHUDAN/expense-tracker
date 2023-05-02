@@ -14,16 +14,13 @@ module.exports = app => {
     try {
       const user = await User.findOne({ email })
       if (!user) {
-        req.flash('warning_msg', '登入失敗:信箱或密碼錯誤')
-        return done(null, false, { message: 'That email is not register!' })
+        return done(null, false, req.flash('warning_msg', '登入失敗:信箱或密碼錯誤'))
       }
       const isMatch = await bcrypt.compare(password, user.password)
       if (!isMatch) {
-        req.flash('warning_msg', '登入失敗:信箱或密碼錯誤')
-        return done(null, false, { message: 'Email or password  incorrect' })
+        return done(null, false, req.flash('warning_msg', '登入失敗:信箱或密碼錯誤'))
       }
-      req.flash('success_msg', '登入成功')
-      return done(null, user)
+      return done(null, user, req.flash('success_msg', '登入成功'))
     } catch (error) {
       return done(err, false)
     }
