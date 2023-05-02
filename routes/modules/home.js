@@ -8,21 +8,17 @@ router.get('/', async (req, res) => {
   try {
     const selectId = req.query.categoryId
     const userId = req.user._id
-    let record = await Record.find({ userId }).lean()
+    const qureyobj = selectId ? { userId, categoryId: selectId } : { userId }
+    const record = await Record.find(qureyobj).lean()
     const category = await CG.find().lean()
-    let selectedData = false
+    const selectedData = await CG.find({ _id: selectId }).lean()
     let totalAmount = 0
-    if (selectId !== undefined) {
-      record = record.filter(r => r.categoryId.toString() === selectId.toString())
-      selectedData = category.filter(cate => cate._id.toString() === selectId.toString())
-      }
-      record.map((r) => {
-        totalAmount += r.amount
-        const newDate = r.date.toLocaleDateString()
-        r.date = newDate
-      })
+    record.map((r) => {
+      totalAmount += r.amount
+      const newDate = r.date.toLocaleDateString()
+      r.date = newDate
+    })
     return res.render('index', { record, totalAmount, category, selectedData })
-
   } catch (error) {
     console.error(error)
   }
